@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+.row-header {
+  margin:0px auto;
+  padding: 50px 0px 25px 0px;
+  border-bottom: 1px ridge;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row-content{
+  min-height: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background: rgb(189,2,198);
+  background: linear-gradient(90deg, rgba(189,2,198,1) 21%, rgba(196,0,255,1) 71%);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.footer{
+  background-color: #512DA8;
+  margin:0px auto;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding-top: 15px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.navbar-dark {
+  background-color: #512DA8;
+}
+.card{
+  border-radius:15px !important;
+}
+.card:hover{
+  box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-links{
+  text-decoration: none;
+  color: #00b1ee;
+  font-size: 25px;
+}
+.react-links:hover{
+  text-decoration: none;
+  color: darkorchid;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 8px 12px; 
+  cursor: pointer;
+  border-radius: 4px;
+  background-color:#30dc00;
+  font-size: 16px;
+  color: #fff;
+}
+input[type="file"] {
+position: absolute;
+z-index: -1;
+top: 6px;
+left: 0;
+font-size: 15px;
+color: rgb(153,153,153);
+}
+.button-wrap {
+position: relative;
 }
