@@ -1,8 +1,9 @@
 import React from 'react';
+import {} from 'reactstrap'
 
 const Footer = () =>{
     return(
-        <div className="footer">
+        <footer className="footer">
             <div className="container">
                 <div className="row justify-content-center">             
                     <div className="col-auto align-self-center">
@@ -10,7 +11,7 @@ const Footer = () =>{
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

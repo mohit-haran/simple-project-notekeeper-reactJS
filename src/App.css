@@ -5,21 +5,30 @@
 }
 
 .row-content{
-  min-height: 300px;
+  min-height: 150px;
 }
 
 body{
   background: rgb(189,2,198);
   background: linear-gradient(90deg, rgba(189,2,198,1) 21%, rgba(196,0,255,1) 71%);
 }
+::-webkit-scrollbar{
+  width: 7px !important;
+}
+::-webkit-scrollbar-track{
+  background-color: white;
+}
+::-webkit-scrollbar-thumb{
+  background: black;
+}
+
 .footer{
   background-color: #512DA8;
   margin:0px auto;
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  padding-top: 15px;
+  padding-top: 10px;
+  position: absolute;
   color: white;
+  bottom: -70px;
 }
 
 
@@ -41,25 +50,4 @@ body{
 .react-links:hover{
   text-decoration: none;
   color: darkorchid;
-}
-
-.custom-file-upload {
-  display: inline-block;
-  padding: 8px 12px; 
-  cursor: pointer;
-  border-radius: 4px;
-  background-color:#30dc00;
-  font-size: 16px;
-  color: #fff;
-}
-input[type="file"] {
-position: absolute;
-z-index: -1;
-top: 6px;
-left: 0;
-font-size: 15px;
-color: rgb(153,153,153);
-}
-.button-wrap {
-position: relative;
 }
