@@ -8,6 +8,12 @@ export const ProjectsReducer = (state = PROJECTS ,action) => {
             var project = action.payload;
             console.log(project);
             return state.concat(project);
+        case ActionTypes.REMOVE_PROJECT:
+            var id=action.payload.id;
+            const nextState= state.filter((project)=>{
+                return project.id!==id
+            });
+            return nextState;
         default:
             return state;
     }

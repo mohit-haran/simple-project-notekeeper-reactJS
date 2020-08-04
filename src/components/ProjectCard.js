@@ -1,11 +1,17 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, CardText} from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, CardHeader, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({project}) => {
+const ProjectCard = ({project,removeProject}) => {
+
+    const handleClick = () =>{
+        removeProject(project.id);
+    }
+
     return(
 
         <Card className="mt-4 card">
+            <CardHeader><Button color="danger" className="float-right rounded-circle" onClick={handleClick}><i className="fa fa-close"></i></Button></CardHeader>
             <Link to={`projects/${project.id}`} className="react-links">
                 <CardBody>
                     <CardTitle>{project.title}</CardTitle>

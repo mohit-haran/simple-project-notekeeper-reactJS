@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProjectDetails = ({project}) => {
-    const files = Array.from(project.files).map((file,index)=>{
+    const files = project.files === null? null: Array.from(project.files).map((file,index)=>{
         return(
             
             <a href={URL.createObjectURL(file)} download key={index}>
@@ -29,12 +29,10 @@ const ProjectDetails = ({project}) => {
                 </div>
             </div>
             <div className="col-12 col-md-4">
-                <h3> FILES : </h3>
+                <h3>FILES : </h3>
             </div>
             <div className="col-12 col-md" style={{fontSize:"20px"}}>
-                <ul>
-                    {files}
-                </ul>
+                {files===null? <h4><br/>Project does not contain any file yet!!</h4>: files}
             </div>
         </div>
     )

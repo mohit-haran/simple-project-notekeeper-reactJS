@@ -3,10 +3,9 @@ import Home from './Home';
 import Projects from './Projects'
 import ProjectDetails from './ProjectDetails';
 import Header from './Header';
-// import Footer from './Footer';
 import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addProject } from '../redux/ActionCreators';
+import { addProject, removeProject } from '../redux/ActionCreators';
 
 
 
@@ -18,7 +17,8 @@ const mapStateToProps = state =>{
 };
 
 const mapDispatchToProps = (dispatch) =>({
-    addProject: (projectId,title, description,files) => dispatch(addProject(projectId,title, description,files))
+    addProject: (projectId,title, description,files) => dispatch(addProject(projectId,title, description,files)),
+    removeProject: (projectId) => dispatch(removeProject(projectId))
 });
 
 const MainComponent = (props) => {
@@ -26,7 +26,6 @@ const MainComponent = (props) => {
 
     const ProjectById = ({match}) =>{
 
-        console.log({match})
         return(
             <ProjectDetails project={props.projects.filter((project)=>{
                 return project.id===match.params.projectid;
@@ -39,8 +38,8 @@ const MainComponent = (props) => {
     <div style={{position:"relative"}}>
         <Header/>
             <Switch>
-                <Route path="/home" component={()=> <Home PROJECTS={props.projects} addProject={props.addProject}/>}/>
-                <Route exact path="/projects" component={() => <Projects PROJECTS={props.projects}/>}/>
+                <Route path="/home" component={()=> <Home PROJECTS={props.projects} addProject={props.addProject} removeProject={props.removeProject}/>}/>
+                <Route exact path="/projects" component={() => <Projects PROJECTS={props.projects} removeProject={props.removeProject}/>}/>
                 <Route path="/projects/:projectid" component={ProjectById}/>
                 <Redirect to="/home" />
             </Switch> 

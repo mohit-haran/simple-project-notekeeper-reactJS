@@ -8,3 +8,10 @@ export const addProject = (projectId,title, description,files) => ({
         files:files
     }
 });
+
+export const removeProject = (projectId)=>({
+    type:ActionTypes.REMOVE_PROJECT,
+    payload:{
+        id:projectId
+    }
+});
